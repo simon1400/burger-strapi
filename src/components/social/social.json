@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_social_socials",
+  "info": {
+    "displayName": "social"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "imstagram",
+        "twitter"
+      ],
+      "required": true,
+      "default": "facebook"
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

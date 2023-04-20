@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Globální prvky",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "galery": {
+      "displayName": "galery",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.galery"
+    },
+    "soc": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.social"
+    },
+    "footerLinks": {
+      "displayName": "link",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.link"
+    }
+  }
+}

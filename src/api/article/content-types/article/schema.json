@@ -1,10 +1,10 @@
 {
-  "kind": "singleType",
-  "collectionName": "homepages",
+  "kind": "collectionType",
+  "collectionName": "articles",
   "info": {
-    "singularName": "homepage",
-    "pluralName": "homepages",
-    "displayName": "Homepage",
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Obecné články",
     "description": ""
   },
   "options": {
@@ -16,8 +16,9 @@
       "type": "string",
       "required": true
     },
-    "title2": {
-      "type": "string"
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     },
     "content": {
       "type": "customField",
@@ -26,6 +27,11 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.link"
+    },
     "galery": {
       "type": "media",
       "multiple": true,
@@ -33,14 +39,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "meta": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.meta"
-    },
-    "eventHead": {
-      "type": "string"
     }
   }
 }

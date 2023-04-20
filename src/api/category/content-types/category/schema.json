@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Kategorie prodejců",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram"
+      ]
+    },
+    "sellers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seller.seller",
+      "mappedBy": "category"
+    }
+  }
+}

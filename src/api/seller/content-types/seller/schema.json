@@ -4,7 +4,7 @@
   "info": {
     "singularName": "seller",
     "pluralName": "sellers",
-    "displayName": "sellers",
+    "displayName": "Prodejci",
     "description": ""
   },
   "options": {
@@ -43,27 +43,45 @@
         "images"
       ]
     },
-    "winnerFestivals": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::festival.festival",
-      "inversedBy": "winners"
-    },
     "labels": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::label.label",
       "inversedBy": "sellers"
     },
-    "socials": {
-      "type": "component",
-      "repeatable": true,
-      "component": "social.social"
-    },
     "meta": {
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
+    },
+    "festival1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::festival.festival",
+      "mappedBy": "winner1"
+    },
+    "festival2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::festival.festival",
+      "mappedBy": "winner2"
+    },
+    "festival3": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::festival.festival",
+      "mappedBy": "winner3"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "sellers"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.link"
     }
   }
 }

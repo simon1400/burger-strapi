@@ -4,7 +4,7 @@
   "info": {
     "singularName": "festival",
     "pluralName": "festivals",
-    "displayName": "festivals",
+    "displayName": "Festivaly",
     "description": ""
   },
   "options": {
@@ -63,17 +63,6 @@
       "relation": "oneToMany",
       "target": "api::seller.seller"
     },
-    "winners": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::seller.seller",
-      "mappedBy": "winnerFestivals"
-    },
-    "event": {
-      "type": "component",
-      "repeatable": false,
-      "component": "social.social"
-    },
     "places": {
       "type": "integer",
       "required": true
@@ -86,6 +75,37 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
+    },
+    "place": {
+      "type": "string",
+      "required": true
+    },
+    "social": {
+      "type": "string"
+    },
+    "vouchers": {
+      "displayName": "winners",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.winners"
+    },
+    "winner1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::seller.seller",
+      "inversedBy": "festival1"
+    },
+    "winner2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::seller.seller",
+      "inversedBy": "festival2"
+    },
+    "winner3": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::seller.seller",
+      "inversedBy": "festival3"
     }
   }
 }

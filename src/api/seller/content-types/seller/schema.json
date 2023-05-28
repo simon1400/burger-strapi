@@ -82,6 +82,13 @@
       "type": "component",
       "repeatable": true,
       "component": "content.link"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "label",
     "pluralName": "labels",
-    "displayName": "labels"
+    "displayName": "labels",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,14 +14,6 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
-    },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
       "required": true
     },
     "sellers": {
@@ -34,6 +27,14 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "label"
+    },
+    "icons": {
+      "type": "enumeration",
+      "enum": [
+        "bezlepek",
+        "vege",
+        "hot"
+      ]
     }
   }
 }

@@ -18,8 +18,10 @@
     "icon": {
       "type": "enumeration",
       "enum": [
-        "facebook",
-        "instagram"
+        "burger",
+        "hranolky",
+        "sladke",
+        "napoje"
       ]
     },
     "sellers": {

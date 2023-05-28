@@ -4,7 +4,7 @@
   "info": {
     "singularName": "label",
     "pluralName": "labels",
-    "displayName": "labels",
+    "displayName": "Štítky prodejců",
     "description": ""
   },
   "options": {
@@ -28,13 +28,12 @@
       "target": "api::post.post",
       "mappedBy": "label"
     },
-    "icons": {
-      "type": "enumeration",
-      "enum": [
-        "bezlepek",
-        "vege",
-        "hot"
-      ]
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

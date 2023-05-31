@@ -1,11 +1,10 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "partners",
   "info": {
     "singularName": "partner",
     "pluralName": "partners",
-    "displayName": "Partneři",
-    "description": ""
+    "displayName": "Partneři"
   },
   "options": {
     "draftAndPublish": true
@@ -16,22 +15,58 @@
       "type": "string",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "vutton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.link"
+    },
+    "headTopPartner": {
+      "type": "string",
+      "required": true
+    },
+    "topPartners": {
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
-    "top": {
-      "type": "boolean",
-      "default": false
+    "headPartner": {
+      "type": "string"
+    },
+    "partners": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "headSupport": {
+      "type": "string"
     },
     "supported": {
-      "type": "boolean",
-      "default": false,
-      "required": false
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "title2": {
+      "type": "string"
+    },
+    "content2": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

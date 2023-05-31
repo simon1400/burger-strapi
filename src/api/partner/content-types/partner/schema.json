@@ -4,7 +4,8 @@
   "info": {
     "singularName": "partner",
     "pluralName": "partners",
-    "displayName": "Partneři"
+    "displayName": "Partneři",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +23,7 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "vutton": {
+    "button": {
       "type": "component",
       "repeatable": false,
       "component": "content.link"
@@ -32,31 +33,34 @@
       "required": true
     },
     "topPartners": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "headPartner": {
       "type": "string"
     },
     "partners": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "headSupport": {
       "type": "string"
     },
     "supported": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "title2": {
       "type": "string"

@@ -15,12 +15,6 @@
     "title": {
       "type": "string"
     },
-    "sellers": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::seller.seller",
-      "mappedBy": "category"
-    },
     "icon": {
       "allowedTypes": [
         "images"
@@ -28,6 +22,12 @@
       "type": "media",
       "multiple": false,
       "required": false
+    },
+    "sellers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::seller.seller",
+      "mappedBy": "category"
     }
   }
 }

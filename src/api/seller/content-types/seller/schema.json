@@ -56,19 +56,19 @@
     },
     "festival1": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::festival.festival",
       "mappedBy": "winner1"
     },
     "festival2": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::festival.festival",
       "mappedBy": "winner2"
     },
     "festival3": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::festival.festival",
       "mappedBy": "winner3"
     },
@@ -84,11 +84,12 @@
       "component": "content.link"
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

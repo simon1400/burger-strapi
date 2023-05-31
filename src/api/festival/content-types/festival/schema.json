@@ -91,19 +91,19 @@
     },
     "winner1": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::seller.seller",
       "inversedBy": "festival1"
     },
     "winner2": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::seller.seller",
       "inversedBy": "festival2"
     },
     "winner3": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::seller.seller",
       "inversedBy": "festival3"
     }

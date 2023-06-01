@@ -28,6 +28,13 @@
       "type": "component",
       "repeatable": true,
       "component": "content.link"
+    },
+    "logoPartners": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

@@ -63,14 +63,6 @@
       "relation": "oneToMany",
       "target": "api::seller.seller"
     },
-    "places": {
-      "type": "integer",
-      "required": true
-    },
-    "replacement": {
-      "type": "boolean",
-      "default": false
-    },
     "meta": {
       "type": "component",
       "repeatable": false,

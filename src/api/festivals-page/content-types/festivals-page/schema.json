@@ -37,6 +37,13 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
+    },
+    "galery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

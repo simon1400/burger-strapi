@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "galery": {
-      "displayName": "galery",
-      "type": "component",
-      "repeatable": true,
-      "component": "content.galery"
-    },
     "soc": {
       "type": "component",
       "repeatable": true,
@@ -30,11 +24,12 @@
       "component": "content.link"
     },
     "logoPartners": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

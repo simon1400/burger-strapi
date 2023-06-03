@@ -1,7 +1,8 @@
 {
   "collectionName": "components_social_socials",
   "info": {
-    "displayName": "social"
+    "displayName": "social",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,7 @@
       "type": "enumeration",
       "enum": [
         "facebook",
-        "imstagram",
+        "instagram",
         "twitter"
       ],
       "required": true,

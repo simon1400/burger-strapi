@@ -17,12 +17,6 @@
       "repeatable": true,
       "component": "social.social"
     },
-    "footerLinks": {
-      "displayName": "link",
-      "type": "component",
-      "repeatable": true,
-      "component": "content.link"
-    },
     "logoPartners": {
       "type": "media",
       "multiple": true,
@@ -30,6 +24,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
     }
   }
 }

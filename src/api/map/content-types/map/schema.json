@@ -4,7 +4,8 @@
   "info": {
     "singularName": "map",
     "pluralName": "maps",
-    "displayName": "Mapa"
+    "displayName": "Mapa",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

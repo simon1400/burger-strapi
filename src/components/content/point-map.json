@@ -1,7 +1,8 @@
 {
   "collectionName": "components_content_point_maps",
   "info": {
-    "displayName": "pointMap"
+    "displayName": "pointMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,9 +10,9 @@
       "type": "string",
       "required": true
     },
-    "festivals": {
+    "festival": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::festival.festival"
     }
   }

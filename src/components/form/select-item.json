@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_form_select_items",
+  "info": {
+    "displayName": "selectItem"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

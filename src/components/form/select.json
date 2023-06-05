@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_form_selects",
+  "info": {
+    "displayName": "select"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "item": {
+      "displayName": "selectItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.select-item"
+    }
+  }
+}

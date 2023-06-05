@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_form_tetx_fields",
+  "info": {
+    "displayName": "tetxField"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "helperText": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "errorMessage": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

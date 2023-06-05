@@ -98,6 +98,15 @@
       "relation": "manyToOne",
       "target": "api::seller.seller",
       "inversedBy": "festival3"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "volno",
+        "nahradník",
+        "obsazeno",
+        "zbývá 1 místo"
+      ]
     }
   }
 }

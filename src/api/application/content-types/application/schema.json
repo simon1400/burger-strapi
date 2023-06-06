@@ -4,67 +4,19 @@
   "info": {
     "singularName": "application",
     "pluralName": "applications",
-    "displayName": "Applications"
+    "displayName": "Applications",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "company": {
-      "type": "string",
-      "required": true
-    },
-    "tent": {
-      "type": "string"
-    },
-    "ico": {
-      "type": "biginteger"
-    },
-    "dic": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "phone": {
-      "type": "string"
-    },
-    "email": {
-      "type": "email"
-    },
-    "bank": {
-      "type": "string"
-    },
-    "web": {
-      "type": "string"
-    },
-    "assortment": {
-      "type": "string"
-    },
-    "sizeTent": {
-      "type": "string"
-    },
-    "kw": {
-      "type": "string"
-    },
-    "appliances": {
-      "type": "string"
-    },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "message": {
-      "type": "text"
-    },
-    "festivals": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::festival.festival"
+    "result": {
+      "displayName": "ResultItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.result-item"
     }
   }
 }

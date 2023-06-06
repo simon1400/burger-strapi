@@ -1,7 +1,8 @@
 {
   "collectionName": "components_content_winners",
   "info": {
-    "displayName": "winners"
+    "displayName": "winners",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,7 @@
       "type": "string"
     },
     "number": {
-      "type": "biginteger"
+      "type": "string"
     }
   }
 }

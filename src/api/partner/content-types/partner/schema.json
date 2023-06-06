@@ -71,6 +71,11 @@
         "preset": "custom"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
     }
   }
 }

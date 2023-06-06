@@ -90,6 +90,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "full": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

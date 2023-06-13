@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_contacts",
   "info": {
-    "displayName": "contact"
+    "displayName": "contact",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,11 +19,15 @@
       "required": true
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }

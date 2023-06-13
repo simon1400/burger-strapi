@@ -83,14 +83,6 @@
       "repeatable": true,
       "component": "content.link"
     },
-    "icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "full": {
       "type": "boolean",
       "default": true

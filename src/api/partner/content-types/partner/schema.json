@@ -32,35 +32,11 @@
       "type": "string",
       "required": true
     },
-    "topPartners": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "headPartner": {
       "type": "string"
     },
-    "partners": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "headSupport": {
       "type": "string"
-    },
-    "supported": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "title2": {
       "type": "string"
@@ -76,6 +52,21 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta"
+    },
+    "topPartners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
+    },
+    "supported": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
     }
   }
 }

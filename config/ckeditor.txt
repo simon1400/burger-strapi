@@ -35,6 +35,19 @@ globalThis.CKEditorConfig = {
                   ],
 
                   language:{},
+                  link: {
+                    decorators: {
+                      addTargetToExternalLinks: true,
+                      defaultProtocol: 'https://',
+                      toggleDownloadable: {
+                        mode: 'manual',
+                        label: 'Otevřít v novém okně?',
+                        attributes: {
+                          target: '_blank'
+                        }
+                      }
+                    }
+                  },
                   toolbar: [
                     'heading',
                     '|',

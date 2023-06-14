@@ -45,6 +45,9 @@
       "relation": "manyToOne",
       "target": "api::label.label",
       "inversedBy": "posts"
+    },
+    "datePublication": {
+      "type": "date"
     }
   }
 }

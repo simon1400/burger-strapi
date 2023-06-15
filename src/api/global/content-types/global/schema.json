@@ -36,6 +36,16 @@
       "type": "component",
       "repeatable": false,
       "component": "content.additional-label-event"
+    },
+    "metaGalery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
+    },
+    "metaWinners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
     }
   }
 }

@@ -39,6 +39,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
     }
   }
 }

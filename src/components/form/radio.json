@@ -1,17 +1,24 @@
 {
   "collectionName": "components_form_radios",
   "info": {
-    "displayName": "radio"
+    "displayName": "radio",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "key": {
-      "type": "string"
-    },
     "item": {
       "type": "component",
       "repeatable": true,
       "component": "form.select-item"
+    },
+    "label": {
+      "type": "string"
+    },
+    "errorMessage": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean"
     }
   }
 }

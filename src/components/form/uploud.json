@@ -1,11 +1,12 @@
 {
   "collectionName": "components_form_uplouds",
   "info": {
-    "displayName": "uploud"
+    "displayName": "uploud",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "key": {
+    "label": {
       "type": "string"
     }
   }

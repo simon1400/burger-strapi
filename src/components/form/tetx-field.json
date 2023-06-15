@@ -1,7 +1,8 @@
 {
   "collectionName": "components_form_tetx_fields",
   "info": {
-    "displayName": "tetxField"
+    "displayName": "tetxField",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,9 +10,6 @@
       "type": "string"
     },
     "helperText": {
-      "type": "string"
-    },
-    "key": {
       "type": "string"
     },
     "errorMessage": {

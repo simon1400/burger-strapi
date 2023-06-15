@@ -107,6 +107,10 @@
         "obsazeno",
         "zbývá 1 místo"
       ]
+    },
+    "showAddLabel": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

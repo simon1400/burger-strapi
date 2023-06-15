@@ -30,6 +30,12 @@
     },
     "email": {
       "type": "email"
+    },
+    "additionalLabel": {
+      "displayName": "Additional label event",
+      "type": "component",
+      "repeatable": false,
+      "component": "content.additional-label-event"
     }
   }
 }

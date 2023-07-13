@@ -48,6 +48,13 @@
     },
     "datePublication": {
       "type": "date"
+    },
+    "galery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

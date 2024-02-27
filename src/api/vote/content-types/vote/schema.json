@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "votes",
+  "info": {
+    "singularName": "vote",
+    "pluralName": "votes",
+    "displayName": "Hlasovani"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "codes": {
+      "displayName": "codes",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.codes"
+    },
+    "festivaly": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::festival.festival"
+    },
+    "shop": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

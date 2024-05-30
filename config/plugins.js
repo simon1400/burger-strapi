@@ -2,9 +2,9 @@ module.exports = {
   graphql: {
     enabled: true,
     config: {
-      defaultLimit: 100,
-      depthLimit: 100,
-      maxLimit: 100,
+      defaultLimit: 1000,
+      depthLimit: 1000,
+      maxLimit: 1000,
     }
   },
 }

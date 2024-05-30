@@ -4,7 +4,8 @@
   "info": {
     "singularName": "vote",
     "pluralName": "votes",
-    "displayName": "Hlasovani"
+    "displayName": "Hlasovani",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -37,6 +38,14 @@
     "shop": {
       "type": "string",
       "required": true
+    },
+    "marketing": {
+      "type": "boolean",
+      "default": false
+    },
+    "mailConfirm": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

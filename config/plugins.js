@@ -7,4 +7,10 @@ module.exports = {
       maxLimit: 1000,
     }
   },
+  'import-export-entries': {
+    enabled: true,
+    config: {
+      // See `Config` section.
+    },
+  },
 }

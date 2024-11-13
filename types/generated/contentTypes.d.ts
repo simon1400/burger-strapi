@@ -529,6 +529,10 @@ export interface PluginContentReleasesRelease extends Schema.CollectionType {
     releasedAt: Attribute.DateTime;
     scheduledAt: Attribute.DateTime;
     timezone: Attribute.String;
+    status: Attribute.Enumeration<
+      ['ready', 'blocked', 'failed', 'done', 'empty']
+    > &
+      Attribute.Required;
     actions: Attribute.Relation<
       'plugin::content-releases.release',
       'oneToMany',
@@ -586,6 +590,7 @@ export interface PluginContentReleasesReleaseAction
       'manyToOne',
       'plugin::content-releases.release'
     >;
+    isEntryValid: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -912,7 +917,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         }
       >;
     button: Attribute.Component<'content.link'>;
-    galery: Attribute.Media;
+    galery: Attribute.Media<'images', true>;
     meta: Attribute.Component<'seo.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -948,7 +953,7 @@ export interface ApiBlogBlog extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    image: Attribute.Media;
+    image: Attribute.Media<'images'>;
     meta: Attribute.Component<'seo.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -976,7 +981,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    icon: Attribute.Media;
+    icon: Attribute.Media<'images'>;
     sellers: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -996,6 +1001,30 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiCodeCode extends Schema.CollectionType {
+  collectionName: 'codes';
+  info: {
+    singularName: 'code';
+    pluralName: 'codes';
+    displayName: 'codes';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    code: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::code.code', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::code.code', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
@@ -1092,7 +1121,7 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    galery: Attribute.Media;
+    galery: Attribute.Media<'images', true>;
     from: Attribute.Date & Attribute.Required;
     to: Attribute.Date & Attribute.Required;
     lineup: Attribute.Relation<
@@ -1173,7 +1202,7 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
         }
       >;
     meta: Attribute.Component<'seo.meta'>;
-    galery: Attribute.Media;
+    galery: Attribute.Media<'images', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1236,7 +1265,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
   attributes: {
     soc: Attribute.Component<'social.social', true>;
-    logoPartners: Attribute.Media;
+    logoPartners: Attribute.Media<'images', true>;
     phone: Attribute.String;
     email: Attribute.Email;
     additionalLabel: Attribute.Component<'content.additional-label-event'>;
@@ -1284,7 +1313,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    galery: Attribute.Media;
+    galery: Attribute.Media<'images', true>;
     meta: Attribute.Component<'seo.meta'>;
     eventHead: Attribute.String;
     createdAt: Attribute.DateTime;
@@ -1331,7 +1360,7 @@ export interface ApiLabelLabel extends Schema.CollectionType {
       'oneToMany',
       'api::post.post'
     >;
-    icon: Attribute.Media;
+    icon: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1444,7 +1473,7 @@ export interface ApiMerchMerch extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::merch.merch', 'title'>;
-    image: Attribute.Media & Attribute.Required;
+    image: Attribute.Media<'images', true> & Attribute.Required;
     price: Attribute.String;
     content: Attribute.RichText &
       Attribute.CustomField<
@@ -1580,7 +1609,7 @@ export interface ApiPostPost extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::post.post', 'title'>;
-    image: Attribute.Media;
+    image: Attribute.Media<'images'>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1595,7 +1624,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::label.label'
     >;
     datePublication: Attribute.Date;
-    galery: Attribute.Media;
+    galery: Attribute.Media<'images', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1623,7 +1652,7 @@ export interface ApiSellerSeller extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::seller.seller', 'title'>;
-    image: Attribute.Media;
+    image: Attribute.Media<'images'>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1631,7 +1660,7 @@ export interface ApiSellerSeller extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    galery: Attribute.Media;
+    galery: Attribute.Media<'images', true>;
     labels: Attribute.Relation<
       'api::seller.seller',
       'manyToMany',
@@ -1687,9 +1716,15 @@ export interface ApiVoteVote extends Schema.CollectionType {
     singularName: 'vote';
     pluralName: 'votes';
     displayName: 'Hlasovani';
+    description: '';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    'import-export-entries': {
+      idField: 'name';
+    };
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -1702,6 +1737,8 @@ export interface ApiVoteVote extends Schema.CollectionType {
       'api::festival.festival'
     >;
     shop: Attribute.String & Attribute.Required;
+    marketing: Attribute.Boolean & Attribute.DefaultTo<false>;
+    mailConfirm: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1738,6 +1775,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::code.code': ApiCodeCode;
       'api::contact.contact': ApiContactContact;
       'api::festival.festival': ApiFestivalFestival;
       'api::festivals-page.festivals-page': ApiFestivalsPageFestivalsPage;

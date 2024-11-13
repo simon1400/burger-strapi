@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name   : "Burger strapi",
-    script : "yarn start",
+    script : "npm start",
     env_production: {}
   }],
 
@@ -11,8 +11,8 @@ module.exports = {
       host : ['89.221.216.23'],
       ref  : 'origin/main',
       repo : 'git@github.com:simon1400/burger-strapi.git',
-      path : '/var/www/burger/strapi',
-      'post-deploy' : 'yarn && yarn build && pm2 reload ecosystem.config.js --env production',
+      path : '/home/dimi/app/burger/strapi',
+      'post-deploy' : 'npm i && npm run build && pm2 reload ecosystem.config.js --env production',
     }
   }
 };

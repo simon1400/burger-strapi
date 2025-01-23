@@ -10,13 +10,22 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "result": {
       "displayName": "ResultItem",
       "type": "component",
       "repeatable": true,
-      "component": "form.result-item"
+      "component": "form.result-item",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

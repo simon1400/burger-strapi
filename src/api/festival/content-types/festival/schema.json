@@ -10,11 +10,20 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid",
@@ -48,15 +57,30 @@
       "required": false,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "from": {
       "type": "date",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "to": {
       "type": "date",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "lineup": {
       "type": "relation",
@@ -66,20 +90,40 @@
     "meta": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.meta"
+      "component": "seo.meta",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "place": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "social": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "vouchers": {
       "displayName": "winners",
       "type": "component",
       "repeatable": true,
-      "component": "content.winners"
+      "component": "content.winners",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "winner1": {
       "type": "relation",
@@ -106,11 +150,21 @@
         "nahradník",
         "obsazeno",
         "zbývá 1 místo"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "showAddLabel": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

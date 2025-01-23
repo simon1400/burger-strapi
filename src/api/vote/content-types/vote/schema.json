@@ -13,26 +13,49 @@
   "pluginOptions": {
     "import-export-entries": {
       "idField": "name"
+    },
+    "i18n": {
+      "localized": true
     }
   },
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "email": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "phone": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "codes": {
       "displayName": "codes",
       "type": "component",
       "repeatable": true,
-      "component": "form.codes"
+      "component": "form.codes",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "festivaly": {
       "type": "relation",
@@ -41,15 +64,30 @@
     },
     "shop": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "marketing": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "mailConfirm": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

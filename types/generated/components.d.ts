@@ -27,93 +27,6 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
-export interface FormUploud extends Schema.Component {
-  collectionName: 'components_form_uplouds';
-  info: {
-    displayName: 'uploud';
-    description: '';
-  };
-  attributes: {
-    label: Attribute.String;
-  };
-}
-
-export interface FormTetxField extends Schema.Component {
-  collectionName: 'components_form_tetx_fields';
-  info: {
-    displayName: 'tetxField';
-    description: '';
-  };
-  attributes: {
-    label: Attribute.String;
-    helperText: Attribute.String;
-    errorMessage: Attribute.String;
-    placeholder: Attribute.String;
-    required: Attribute.Boolean & Attribute.DefaultTo<true>;
-  };
-}
-
-export interface FormSelect extends Schema.Component {
-  collectionName: 'components_form_selects';
-  info: {
-    displayName: 'select';
-    description: '';
-  };
-  attributes: {
-    item: Attribute.Component<'form.select-item', true>;
-    required: Attribute.Boolean;
-    errorMessage: Attribute.String;
-    label: Attribute.String;
-  };
-}
-
-export interface FormSelectItem extends Schema.Component {
-  collectionName: 'components_form_select_items';
-  info: {
-    displayName: 'selectItem';
-  };
-  attributes: {
-    label: Attribute.String;
-    disabled: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface FormResultItem extends Schema.Component {
-  collectionName: 'components_form_result_items';
-  info: {
-    displayName: 'ResultItem';
-  };
-  attributes: {
-    key: Attribute.String;
-    value: Attribute.String;
-  };
-}
-
-export interface FormRadio extends Schema.Component {
-  collectionName: 'components_form_radios';
-  info: {
-    displayName: 'radio';
-    description: '';
-  };
-  attributes: {
-    item: Attribute.Component<'form.select-item', true>;
-    label: Attribute.String;
-    errorMessage: Attribute.String;
-    required: Attribute.Boolean;
-  };
-}
-
-export interface FormCodes extends Schema.Component {
-  collectionName: 'components_form_codes';
-  info: {
-    displayName: 'codes';
-    icon: 'apps';
-  };
-  attributes: {
-    code: Attribute.String;
-  };
-}
-
 export interface ContentWinners extends Schema.Component {
   collectionName: 'components_content_winners';
   info: {
@@ -225,18 +138,98 @@ export interface ContactContact extends Schema.Component {
   };
 }
 
+export interface FormUploud extends Schema.Component {
+  collectionName: 'components_form_uplouds';
+  info: {
+    displayName: 'uploud';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+  };
+}
+
+export interface FormTetxField extends Schema.Component {
+  collectionName: 'components_form_tetx_fields';
+  info: {
+    displayName: 'tetxField';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    helperText: Attribute.String;
+    errorMessage: Attribute.String;
+    placeholder: Attribute.String;
+    required: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
+export interface FormSelect extends Schema.Component {
+  collectionName: 'components_form_selects';
+  info: {
+    displayName: 'select';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.Component<'form.select-item', true>;
+    required: Attribute.Boolean;
+    errorMessage: Attribute.String;
+    label: Attribute.String;
+  };
+}
+
+export interface FormSelectItem extends Schema.Component {
+  collectionName: 'components_form_select_items';
+  info: {
+    displayName: 'selectItem';
+  };
+  attributes: {
+    label: Attribute.String;
+    disabled: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface FormResultItem extends Schema.Component {
+  collectionName: 'components_form_result_items';
+  info: {
+    displayName: 'ResultItem';
+  };
+  attributes: {
+    key: Attribute.String;
+    value: Attribute.String;
+  };
+}
+
+export interface FormRadio extends Schema.Component {
+  collectionName: 'components_form_radios';
+  info: {
+    displayName: 'radio';
+    description: '';
+  };
+  attributes: {
+    item: Attribute.Component<'form.select-item', true>;
+    label: Attribute.String;
+    errorMessage: Attribute.String;
+    required: Attribute.Boolean;
+  };
+}
+
+export interface FormCodes extends Schema.Component {
+  collectionName: 'components_form_codes';
+  info: {
+    displayName: 'codes';
+    icon: 'apps';
+  };
+  attributes: {
+    code: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'social.social': SocialSocial;
       'seo.meta': SeoMeta;
-      'form.uploud': FormUploud;
-      'form.tetx-field': FormTetxField;
-      'form.select': FormSelect;
-      'form.select-item': FormSelectItem;
-      'form.result-item': FormResultItem;
-      'form.radio': FormRadio;
-      'form.codes': FormCodes;
       'content.winners': ContentWinners;
       'content.point-map': ContentPointMap;
       'content.partner': ContentPartner;
@@ -246,6 +239,13 @@ declare module '@strapi/types' {
       'content.galery': ContentGalery;
       'content.additional-label-event': ContentAdditionalLabelEvent;
       'contact.contact': ContactContact;
+      'form.uploud': FormUploud;
+      'form.tetx-field': FormTetxField;
+      'form.select': FormSelect;
+      'form.select-item': FormSelectItem;
+      'form.result-item': FormResultItem;
+      'form.radio': FormRadio;
+      'form.codes': FormCodes;
     }
   }
 }

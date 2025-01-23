@@ -823,8 +823,18 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    result: Attribute.Component<'form.result-item', true>;
+    result: Attribute.Component<'form.result-item', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -840,6 +850,12 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::application.application',
+      'oneToMany',
+      'api::application.application'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -857,8 +873,19 @@ export interface ApiApplicationPageApplicationPage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -873,7 +900,12 @@ export interface ApiApplicationPageApplicationPage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    meta: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -889,6 +921,12 @@ export interface ApiApplicationPageApplicationPage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::application-page.application-page',
+      'oneToMany',
+      'api::application-page.application-page'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -906,8 +944,19 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::article.article', 'title'>;
     content: Attribute.RichText &
       Attribute.CustomField<
@@ -916,9 +965,24 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    button: Attribute.Component<'content.link'>;
-    galery: Attribute.Media<'images', true>;
-    meta: Attribute.Component<'seo.meta'>;
+    button: Attribute.Component<'content.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -934,6 +998,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::article.article'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -951,10 +1021,31 @@ export interface ApiBlogBlog extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    image: Attribute.Media<'images'>;
-    meta: Attribute.Component<'seo.meta'>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -962,6 +1053,12 @@ export interface ApiBlogBlog extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -979,9 +1076,24 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
-    icon: Attribute.Media<'images'>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icon: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     sellers: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -1002,6 +1114,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::category.category'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1014,18 +1132,36 @@ export interface ApiCodeCode extends Schema.CollectionType {
     singularName: 'code';
     pluralName: 'codes';
     displayName: 'codes';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    code: Attribute.String & Attribute.Required;
+    code: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::code.code', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::code.code', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::code.code',
+      'oneToMany',
+      'api::code.code'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1043,8 +1179,19 @@ export interface ApiContactContact extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1052,9 +1199,24 @@ export interface ApiContactContact extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    phone: Attribute.String;
-    email: Attribute.Email;
-    title2: Attribute.String;
+    phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.Email &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1062,8 +1224,18 @@ export interface ApiContactContact extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    item: Attribute.Component<'contact.contact', true>;
-    meta: Attribute.Component<'seo.meta'>;
+    item: Attribute.Component<'contact.contact', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1079,6 +1251,12 @@ export interface ApiContactContact extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::contact.contact',
+      'oneToMany',
+      'api::contact.contact'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1096,8 +1274,19 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::festival.festival', 'title'>;
     content: Attribute.RichText &
       Attribute.Required &
@@ -1121,18 +1310,56 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    galery: Attribute.Media<'images', true>;
-    from: Attribute.Date & Attribute.Required;
-    to: Attribute.Date & Attribute.Required;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    from: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    to: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     lineup: Attribute.Relation<
       'api::festival.festival',
       'oneToMany',
       'api::seller.seller'
     >;
-    meta: Attribute.Component<'seo.meta'>;
-    place: Attribute.String & Attribute.Required;
-    social: Attribute.String;
-    vouchers: Attribute.Component<'content.winners', true>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    place: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    social: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    vouchers: Attribute.Component<'content.winners', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     winner1: Attribute.Relation<
       'api::festival.festival',
       'manyToOne',
@@ -1150,8 +1377,19 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
     >;
     state: Attribute.Enumeration<
       ['volno', 'nahradn\u00EDk', 'obsazeno', 'zb\u00FDv\u00E1 1 m\u00EDsto']
-    >;
-    showAddLabel: Attribute.Boolean & Attribute.DefaultTo<false>;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    showAddLabel: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1167,6 +1405,12 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::festival.festival',
+      'oneToMany',
+      'api::festival.festival'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1184,8 +1428,19 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1193,7 +1448,12 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    title2: Attribute.String;
+    title2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1201,8 +1461,18 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    meta: Attribute.Component<'seo.meta'>;
-    galery: Attribute.Media<'images', true>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1218,6 +1488,12 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::festivals-page.festivals-page',
+      'oneToMany',
+      'api::festivals-page.festivals-page'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1235,10 +1511,20 @@ export interface ApiFormForm extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     fields: Attribute.DynamicZone<
       ['form.tetx-field', 'form.select', 'form.radio', 'form.uploud']
-    >;
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1246,6 +1532,12 @@ export interface ApiFormForm extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::form.form',
+      'oneToMany',
+      'api::form.form'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1263,14 +1555,54 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    soc: Attribute.Component<'social.social', true>;
-    logoPartners: Attribute.Media<'images', true>;
-    phone: Attribute.String;
-    email: Attribute.Email;
-    additionalLabel: Attribute.Component<'content.additional-label-event'>;
-    metaGalery: Attribute.Component<'seo.meta'>;
-    metaWinners: Attribute.Component<'seo.meta'>;
+    soc: Attribute.Component<'social.social', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    logoPartners: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.Email &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    additionalLabel: Attribute.Component<'content.additional-label-event'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaGalery: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaWinners: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1286,6 +1618,12 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::global.global',
+      'oneToMany',
+      'api::global.global'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1303,9 +1641,25 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    title2: Attribute.String;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1313,9 +1667,24 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    galery: Attribute.Media<'images', true>;
-    meta: Attribute.Component<'seo.meta'>;
-    eventHead: Attribute.String;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    eventHead: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1331,6 +1700,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1348,8 +1723,19 @@ export interface ApiLabelLabel extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     sellers: Attribute.Relation<
       'api::label.label',
       'manyToMany',
@@ -1360,7 +1746,12 @@ export interface ApiLabelLabel extends Schema.CollectionType {
       'oneToMany',
       'api::post.post'
     >;
-    icon: Attribute.Media<'images'>;
+    icon: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1376,6 +1767,12 @@ export interface ApiLabelLabel extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::label.label',
+      'oneToMany',
+      'api::label.label'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1393,9 +1790,24 @@ export interface ApiMapMap extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    map: Attribute.RichText;
-    point: Attribute.Component<'content.point-map', true>;
+    map: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    point: Attribute.Component<'content.point-map', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1403,6 +1815,12 @@ export interface ApiMapMap extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::map.map',
+      'oneToMany',
+      'api::map.map'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1420,8 +1838,18 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1429,7 +1857,12 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    title2: Attribute.String;
+    title2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1437,7 +1870,12 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    meta: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1453,6 +1891,12 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::merc-page.merc-page',
+      'oneToMany',
+      'api::merc-page.merc-page'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1470,11 +1914,33 @@ export interface ApiMerchMerch extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::merch.merch', 'title'>;
-    image: Attribute.Media<'images', true> & Attribute.Required;
-    price: Attribute.String;
+    image: Attribute.Media<'images', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    price: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1482,7 +1948,12 @@ export interface ApiMerchMerch extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    title2: Attribute.String;
+    title2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1490,7 +1961,12 @@ export interface ApiMerchMerch extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    meta: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1506,6 +1982,12 @@ export interface ApiMerchMerch extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::merch.merch',
+      'oneToMany',
+      'api::merch.merch'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1523,8 +2005,18 @@ export interface ApiNavNav extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    topNav: Attribute.Component<'content.nav-item', true>;
+    topNav: Attribute.Component<'content.nav-item', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1532,6 +2024,12 @@ export interface ApiNavNav extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::nav.nav', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::nav.nav',
+      'oneToMany',
+      'api::nav.nav'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1549,8 +2047,19 @@ export interface ApiPartnerPartner extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1558,11 +2067,37 @@ export interface ApiPartnerPartner extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    button: Attribute.Component<'content.link'>;
-    headTopPartner: Attribute.String & Attribute.Required;
-    headPartner: Attribute.String;
-    headSupport: Attribute.String;
-    title2: Attribute.String;
+    button: Attribute.Component<'content.link'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    headTopPartner: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    headPartner: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    headSupport: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1570,10 +2105,30 @@ export interface ApiPartnerPartner extends Schema.SingleType {
           preset: 'custom';
         }
       >;
-    meta: Attribute.Component<'seo.meta'>;
-    topPartners: Attribute.Component<'content.partner', true>;
-    partners: Attribute.Component<'content.partner', true>;
-    supported: Attribute.Component<'content.partner', true>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    topPartners: Attribute.Component<'content.partner', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    partners: Attribute.Component<'content.partner', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    supported: Attribute.Component<'content.partner', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1589,6 +2144,12 @@ export interface ApiPartnerPartner extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::partner.partner',
+      'oneToMany',
+      'api::partner.partner'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1606,10 +2167,26 @@ export interface ApiPostPost extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::post.post', 'title'>;
-    image: Attribute.Media<'images'>;
+    image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1617,14 +2194,29 @@ export interface ApiPostPost extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    meta: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     label: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'api::label.label'
     >;
-    datePublication: Attribute.Date;
-    galery: Attribute.Media<'images', true>;
+    datePublication: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1632,6 +2224,12 @@ export interface ApiPostPost extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::post.post',
+      'oneToMany',
+      'api::post.post'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1649,10 +2247,26 @@ export interface ApiSellerSeller extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::seller.seller', 'title'>;
-    image: Attribute.Media<'images'>;
+    image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -1660,13 +2274,23 @@ export interface ApiSellerSeller extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
-    galery: Attribute.Media<'images', true>;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     labels: Attribute.Relation<
       'api::seller.seller',
       'manyToMany',
       'api::label.label'
     >;
-    meta: Attribute.Component<'seo.meta'>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     festival1: Attribute.Relation<
       'api::seller.seller',
       'oneToMany',
@@ -1687,8 +2311,19 @@ export interface ApiSellerSeller extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
-    socials: Attribute.Component<'content.link', true>;
-    full: Attribute.Boolean & Attribute.DefaultTo<true>;
+    socials: Attribute.Component<'content.link', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    full: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1704,6 +2339,12 @@ export interface ApiSellerSeller extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::seller.seller',
+      'oneToMany',
+      'api::seller.seller'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1725,20 +2366,64 @@ export interface ApiVoteVote extends Schema.CollectionType {
     'import-export-entries': {
       idField: 'name';
     };
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    email: Attribute.String & Attribute.Required;
-    phone: Attribute.String & Attribute.Required;
-    codes: Attribute.Component<'form.codes', true>;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    codes: Attribute.Component<'form.codes', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     festivaly: Attribute.Relation<
       'api::vote.vote',
       'oneToOne',
       'api::festival.festival'
     >;
-    shop: Attribute.String & Attribute.Required;
-    marketing: Attribute.Boolean & Attribute.DefaultTo<false>;
-    mailConfirm: Attribute.Boolean & Attribute.DefaultTo<false>;
+    shop: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    marketing: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    mailConfirm: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1746,6 +2431,12 @@ export interface ApiVoteVote extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::vote.vote', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::vote.vote',
+      'oneToMany',
+      'api::vote.vote'
+    >;
+    locale: Attribute.String;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;

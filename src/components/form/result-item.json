@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_form_result_items",
+  "info": {
+    "displayName": "ResultItem"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "navs",
+  "info": {
+    "singularName": "nav",
+    "pluralName": "navs",
+    "displayName": "Navigace",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topNav": {
+      "displayName": "navItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.nav-item"
+    }
+  }
+}

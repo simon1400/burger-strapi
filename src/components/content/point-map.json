@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_point_maps",
+  "info": {
+    "displayName": "pointMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "idLayer": {
+      "type": "string",
+      "required": true
+    },
+    "festival": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::festival.festival"
+    }
+  }
+}

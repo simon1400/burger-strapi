@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "forms",
+  "info": {
+    "singularName": "form",
+    "pluralName": "forms",
+    "displayName": "form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fields": {
+      "type": "dynamiczone",
+      "components": [
+        "form.tetx-field",
+        "form.select",
+        "form.radio",
+        "form.uploud"
+      ]
+    }
+  }
+}

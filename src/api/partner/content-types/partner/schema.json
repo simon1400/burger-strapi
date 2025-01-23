@@ -1,0 +1,80 @@
+{
+  "kind": "singleType",
+  "collectionName": "partners",
+  "info": {
+    "singularName": "partner",
+    "pluralName": "partners",
+    "displayName": "Partneři",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.link"
+    },
+    "headTopPartner": {
+      "type": "string",
+      "required": true
+    },
+    "headPartner": {
+      "type": "string"
+    },
+    "headSupport": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "content2": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
+    },
+    "topPartners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
+    },
+    "supported": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
+    },
+    "headPartner2": {
+      "type": "string"
+    },
+    "partners2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.partner"
+    }
+  }
+}

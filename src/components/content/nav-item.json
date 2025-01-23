@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_content_nav_items",
+  "info": {
+    "displayName": "navItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "child": {
+      "displayName": "navItemChild",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.nav-item-child"
+    }
+  }
+}

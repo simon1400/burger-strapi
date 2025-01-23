@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_content_winners",
+  "info": {
+    "displayName": "winners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    }
+  }
+}

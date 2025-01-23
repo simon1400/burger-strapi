@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_form_codes",
+  "info": {
+    "displayName": "codes",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "kind": "collectionType",
+  "collectionName": "festivals",
+  "info": {
+    "singularName": "festival",
+    "pluralName": "festivals",
+    "displayName": "Festivaly",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "contentBefore": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "contentAfter": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "galery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "from": {
+      "type": "date",
+      "required": true
+    },
+    "to": {
+      "type": "date",
+      "required": true
+    },
+    "lineup": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seller.seller"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
+    },
+    "place": {
+      "type": "string",
+      "required": true
+    },
+    "social": {
+      "type": "string"
+    },
+    "vouchers": {
+      "displayName": "winners",
+      "type": "component",
+      "repeatable": true,
+      "component": "content.winners"
+    },
+    "winner1": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seller.seller",
+      "inversedBy": "festival1"
+    },
+    "winner2": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seller.seller",
+      "inversedBy": "festival2"
+    },
+    "winner3": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seller.seller",
+      "inversedBy": "festival3"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "volno",
+        "nahradník",
+        "obsazeno",
+        "zbývá 1 místo"
+      ]
+    },
+    "showAddLabel": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

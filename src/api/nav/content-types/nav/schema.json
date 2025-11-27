@@ -10,13 +10,22 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "topNav": {
       "displayName": "navItem",
       "type": "component",
       "repeatable": true,
-      "component": "content.nav-item"
+      "component": "content.nav-item",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

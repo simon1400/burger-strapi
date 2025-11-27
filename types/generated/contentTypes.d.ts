@@ -255,9 +255,6 @@ export interface AdminApiTokenPermission extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -317,9 +314,6 @@ export interface AdminTransferToken extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -365,9 +359,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -432,9 +423,6 @@ export interface PluginUploadFile extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -500,9 +488,6 @@ export interface PluginUploadFolder extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -552,9 +537,6 @@ export interface PluginContentReleasesRelease extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -605,9 +587,6 @@ export interface PluginContentReleasesReleaseAction
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -806,9 +785,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -856,9 +832,6 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
       'api::application.application'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -927,9 +900,6 @@ export interface ApiApplicationPageApplicationPage extends Schema.SingleType {
       'api::application-page.application-page'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1004,9 +974,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::article.article'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1059,9 +1026,6 @@ export interface ApiBlogBlog extends Schema.SingleType {
       'api::blog.blog'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1120,9 +1084,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::category.category'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1162,9 +1123,6 @@ export interface ApiCodeCode extends Schema.CollectionType {
       'api::code.code'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1257,9 +1215,6 @@ export interface ApiContactContact extends Schema.SingleType {
       'api::contact.contact'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1411,9 +1366,6 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
       'api::festival.festival'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1494,9 +1446,6 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
       'api::festivals-page.festivals-page'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1538,9 +1487,6 @@ export interface ApiFormForm extends Schema.SingleType {
       'api::form.form'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1624,9 +1570,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
       'api::global.global'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1706,9 +1649,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       'api::homepage.homepage'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1773,9 +1713,6 @@ export interface ApiLabelLabel extends Schema.CollectionType {
       'api::label.label'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1821,9 +1758,6 @@ export interface ApiMapMap extends Schema.SingleType {
       'api::map.map'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1897,9 +1831,6 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
       'api::merc-page.merc-page'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -1988,9 +1919,6 @@ export interface ApiMerchMerch extends Schema.CollectionType {
       'api::merch.merch'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -2030,9 +1958,6 @@ export interface ApiNavNav extends Schema.SingleType {
       'api::nav.nav'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -2150,9 +2075,6 @@ export interface ApiPartnerPartner extends Schema.SingleType {
       'api::partner.partner'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -2230,9 +2152,6 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::post.post'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -2345,9 +2264,6 @@ export interface ApiSellerSeller extends Schema.CollectionType {
       'api::seller.seller'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 
@@ -2437,9 +2353,6 @@ export interface ApiVoteVote extends Schema.CollectionType {
       'api::vote.vote'
     >;
     locale: Attribute.String;
-    sitemap_exclude: Attribute.Boolean &
-      Attribute.Private &
-      Attribute.DefaultTo<false>;
   };
 }
 

@@ -123,21 +123,6 @@ export interface ContentAdditionalLabelEvent extends Schema.Component {
   };
 }
 
-export interface ContactContact extends Schema.Component {
-  collectionName: 'components_contact_contacts';
-  info: {
-    displayName: 'contact';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    function: Attribute.String & Attribute.Required;
-    email: Attribute.Email & Attribute.Required;
-    image: Attribute.Media<'images'>;
-    phone: Attribute.String;
-  };
-}
-
 export interface FormUploud extends Schema.Component {
   collectionName: 'components_form_uplouds';
   info: {
@@ -225,6 +210,21 @@ export interface FormCodes extends Schema.Component {
   };
 }
 
+export interface ContactContact extends Schema.Component {
+  collectionName: 'components_contact_contacts';
+  info: {
+    displayName: 'contact';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    function: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    image: Attribute.Media<'images'>;
+    phone: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -238,7 +238,6 @@ declare module '@strapi/types' {
       'content.link': ContentLink;
       'content.galery': ContentGalery;
       'content.additional-label-event': ContentAdditionalLabelEvent;
-      'contact.contact': ContactContact;
       'form.uploud': FormUploud;
       'form.tetx-field': FormTetxField;
       'form.select': FormSelect;
@@ -246,6 +245,7 @@ declare module '@strapi/types' {
       'form.result-item': FormResultItem;
       'form.radio': FormRadio;
       'form.codes': FormCodes;
+      'contact.contact': ContactContact;
     }
   }
 }

@@ -17,9 +17,11 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://burger.hardart.cz', 'https://burger-strapi-demo.hardart.cz'],
+      origin: ['https://burger.hardart.cz', 'https://burger-strapi-demo.hardart.cz', 'http://localhost:3000'],
       credentials: true,
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
+      keepHeaderOnError: true,
     },
   },
   'strapi::poweredBy',

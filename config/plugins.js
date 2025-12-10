@@ -1,4 +1,14 @@
 module.exports = {
+  'local-image-sharp': {
+    enabled: true,
+    config: {
+      cacheDir: '.cache/images',
+      maxAge: 3600000,
+      jpegQuality: 80,
+      pngQuality: 80,
+      webpQuality: 80,
+    }
+  },
   graphql: {
     enabled: true,
     config: {

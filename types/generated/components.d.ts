@@ -27,102 +27,6 @@ export interface SeoMeta extends Schema.Component {
   };
 }
 
-export interface ContentWinners extends Schema.Component {
-  collectionName: 'components_content_winners';
-  info: {
-    displayName: 'winners';
-    description: '';
-  };
-  attributes: {
-    name: Attribute.String;
-    number: Attribute.String;
-  };
-}
-
-export interface ContentPointMap extends Schema.Component {
-  collectionName: 'components_content_point_maps';
-  info: {
-    displayName: 'pointMap';
-    description: '';
-  };
-  attributes: {
-    idLayer: Attribute.String & Attribute.Required;
-    festival: Attribute.Relation<
-      'content.point-map',
-      'oneToOne',
-      'api::festival.festival'
-    >;
-  };
-}
-
-export interface ContentPartner extends Schema.Component {
-  collectionName: 'components_content_partners';
-  info: {
-    displayName: 'Partner';
-  };
-  attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentNavItem extends Schema.Component {
-  collectionName: 'components_content_nav_items';
-  info: {
-    displayName: 'navItem';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-    child: Attribute.Component<'content.nav-item-child', true>;
-  };
-}
-
-export interface ContentNavItemChild extends Schema.Component {
-  collectionName: 'components_content_nav_item_children';
-  info: {
-    displayName: 'navItemChild';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentLink extends Schema.Component {
-  collectionName: 'components_content_links';
-  info: {
-    displayName: 'link';
-  };
-  attributes: {
-    text: Attribute.String & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentGalery extends Schema.Component {
-  collectionName: 'components_content_galeries';
-  info: {
-    displayName: 'galery';
-  };
-  attributes: {
-    image: Attribute.Media<'images'>;
-    link: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentAdditionalLabelEvent extends Schema.Component {
-  collectionName: 'components_content_additional_label_events';
-  info: {
-    displayName: 'Additional label event';
-  };
-  attributes: {
-    icon: Attribute.Media<'images'> & Attribute.Required;
-    text: Attribute.String & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-  };
-}
-
 export interface FormUploud extends Schema.Component {
   collectionName: 'components_form_uplouds';
   info: {
@@ -219,9 +123,105 @@ export interface ContactContact extends Schema.Component {
   attributes: {
     title: Attribute.String & Attribute.Required;
     function: Attribute.String & Attribute.Required;
-    email: Attribute.Email & Attribute.Required;
+    email: Attribute.Email;
     image: Attribute.Media<'images'>;
     phone: Attribute.String;
+  };
+}
+
+export interface ContentWinners extends Schema.Component {
+  collectionName: 'components_content_winners';
+  info: {
+    displayName: 'winners';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    number: Attribute.String;
+  };
+}
+
+export interface ContentPointMap extends Schema.Component {
+  collectionName: 'components_content_point_maps';
+  info: {
+    displayName: 'pointMap';
+    description: '';
+  };
+  attributes: {
+    idLayer: Attribute.String & Attribute.Required;
+    festival: Attribute.Relation<
+      'content.point-map',
+      'oneToOne',
+      'api::festival.festival'
+    >;
+  };
+}
+
+export interface ContentPartner extends Schema.Component {
+  collectionName: 'components_content_partners';
+  info: {
+    displayName: 'Partner';
+  };
+  attributes: {
+    image: Attribute.Media<'images'> & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentNavItem extends Schema.Component {
+  collectionName: 'components_content_nav_items';
+  info: {
+    displayName: 'navItem';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
+    child: Attribute.Component<'content.nav-item-child', true>;
+  };
+}
+
+export interface ContentNavItemChild extends Schema.Component {
+  collectionName: 'components_content_nav_item_children';
+  info: {
+    displayName: 'navItemChild';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentLink extends Schema.Component {
+  collectionName: 'components_content_links';
+  info: {
+    displayName: 'link';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentGalery extends Schema.Component {
+  collectionName: 'components_content_galeries';
+  info: {
+    displayName: 'galery';
+  };
+  attributes: {
+    image: Attribute.Media<'images'>;
+    link: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentAdditionalLabelEvent extends Schema.Component {
+  collectionName: 'components_content_additional_label_events';
+  info: {
+    displayName: 'Additional label event';
+  };
+  attributes: {
+    icon: Attribute.Media<'images'> & Attribute.Required;
+    text: Attribute.String & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
   };
 }
 
@@ -230,14 +230,6 @@ declare module '@strapi/types' {
     export interface Components {
       'social.social': SocialSocial;
       'seo.meta': SeoMeta;
-      'content.winners': ContentWinners;
-      'content.point-map': ContentPointMap;
-      'content.partner': ContentPartner;
-      'content.nav-item': ContentNavItem;
-      'content.nav-item-child': ContentNavItemChild;
-      'content.link': ContentLink;
-      'content.galery': ContentGalery;
-      'content.additional-label-event': ContentAdditionalLabelEvent;
       'form.uploud': FormUploud;
       'form.tetx-field': FormTetxField;
       'form.select': FormSelect;
@@ -246,6 +238,14 @@ declare module '@strapi/types' {
       'form.radio': FormRadio;
       'form.codes': FormCodes;
       'contact.contact': ContactContact;
+      'content.winners': ContentWinners;
+      'content.point-map': ContentPointMap;
+      'content.partner': ContentPartner;
+      'content.nav-item': ContentNavItem;
+      'content.nav-item-child': ContentNavItemChild;
+      'content.link': ContentLink;
+      'content.galery': ContentGalery;
+      'content.additional-label-event': ContentAdditionalLabelEvent;
     }
   }
 }

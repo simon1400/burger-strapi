@@ -11,9 +11,6 @@
     "draftAndPublish": true
   },
   "pluginOptions": {
-    "import-export-entries": {
-      "idField": "name"
-    },
     "i18n": {
       "localized": true
     }

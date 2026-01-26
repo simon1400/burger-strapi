@@ -16,7 +16,7 @@
     },
     "email": {
       "type": "email",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",

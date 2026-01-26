@@ -49,6 +49,12 @@
           "localized": true
         }
       }
+    },
+    "news": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news.news",
+      "mappedBy": "label"
     }
   }
 }

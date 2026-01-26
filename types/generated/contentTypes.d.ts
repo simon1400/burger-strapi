@@ -865,14 +865,24 @@ export interface ApiApplicationPageApplicationPage extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     content2: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta: Attribute.Component<'seo.meta'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -934,7 +944,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     button: Attribute.Component<'content.link'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1156,7 +1171,12 @@ export interface ApiContactContact extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     phone: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1181,7 +1201,12 @@ export interface ApiContactContact extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     item: Attribute.Component<'contact.contact', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1250,21 +1275,36 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     contentBefore: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     contentAfter: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     galery: Attribute.Media<'images', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1399,7 +1439,12 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title2: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1412,7 +1457,12 @@ export interface ApiFestivalsPageFestivalsPage extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta: Attribute.Component<'seo.meta'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1609,7 +1659,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     galery: Attribute.Media<'images', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1692,6 +1747,7 @@ export interface ApiLabelLabel extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    news: Attribute.Relation<'api::label.label', 'oneToMany', 'api::news.news'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1790,7 +1846,12 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title2: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1803,7 +1864,12 @@ export interface ApiMercPageMercPage extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta: Attribute.Component<'seo.meta'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1878,7 +1944,12 @@ export interface ApiMerchMerch extends Schema.CollectionType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title2: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1891,7 +1962,12 @@ export interface ApiMerchMerch extends Schema.CollectionType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta: Attribute.Component<'seo.meta'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1961,6 +2037,166 @@ export interface ApiNavNav extends Schema.SingleType {
   };
 }
 
+export interface ApiNewsNews extends Schema.CollectionType {
+  collectionName: 'newss';
+  info: {
+    singularName: 'news';
+    pluralName: 'newss';
+    displayName: 'Novinky';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::news.news', 'title'> & Attribute.Required;
+    image: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label: Attribute.Relation<
+      'api::news.news',
+      'manyToOne',
+      'api::label.label'
+    >;
+    datePublication: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    galery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    youtube: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::news.news', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::news.news', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::news.news',
+      'oneToMany',
+      'api::news.news'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiNewsPageNewsPage extends Schema.SingleType {
+  collectionName: 'news_pages';
+  info: {
+    singularName: 'news-page';
+    pluralName: 'news-pages';
+    displayName: 'Str\u00E1nka Novinek';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meta: Attribute.Component<'seo.meta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToMany',
+      'api::news-page.news-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiPartnerPartner extends Schema.SingleType {
   collectionName: 'partners';
   info: {
@@ -1991,7 +2227,12 @@ export interface ApiPartnerPartner extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     button: Attribute.Component<'content.link'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2029,7 +2270,12 @@ export interface ApiPartnerPartner extends Schema.SingleType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta: Attribute.Component<'seo.meta'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2049,6 +2295,18 @@ export interface ApiPartnerPartner extends Schema.SingleType {
         };
       }>;
     supported: Attribute.Component<'content.partner', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    headPartner2: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    partners2: Attribute.Component<'content.partner', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2115,7 +2373,12 @@ export interface ApiPostPost extends Schema.CollectionType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     meta: Attribute.Component<'seo.meta'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2192,7 +2455,12 @@ export interface ApiSellerSeller extends Schema.CollectionType {
         {
           preset: 'custom';
         }
-      >;
+      > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     galery: Attribute.Media<'images', true> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2279,9 +2547,6 @@ export interface ApiVoteVote extends Schema.CollectionType {
     draftAndPublish: true;
   };
   pluginOptions: {
-    'import-export-entries': {
-      idField: 'name';
-    };
     i18n: {
       localized: true;
     };
@@ -2391,6 +2656,8 @@ declare module '@strapi/types' {
       'api::merc-page.merc-page': ApiMercPageMercPage;
       'api::merch.merch': ApiMerchMerch;
       'api::nav.nav': ApiNavNav;
+      'api::news.news': ApiNewsNews;
+      'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::partner.partner': ApiPartnerPartner;
       'api::post.post': ApiPostPost;
       'api::seller.seller': ApiSellerSeller;

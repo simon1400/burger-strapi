@@ -79,6 +79,18 @@
           "localized": true
         }
       }
+    },
+    "votesIntroContent": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "custom"
+      },
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

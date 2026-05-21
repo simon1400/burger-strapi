@@ -39,6 +39,11 @@
         }
       }
     },
+    "partnersFooter": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::festival-partner.festival-partner"
+    },
     "phone": {
       "type": "string",
       "pluginOptions": {

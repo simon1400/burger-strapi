@@ -103,34 +103,19 @@
       }
     },
     "topPartners": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.partner",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::festival-partner.festival-partner"
     },
     "partners": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.partner",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::festival-partner.festival-partner"
     },
     "supported": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.partner",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::festival-partner.festival-partner"
     },
     "headPartner2": {
       "type": "string",
@@ -141,14 +126,9 @@
       }
     },
     "partners2": {
-      "type": "component",
-      "repeatable": true,
-      "component": "content.partner",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::festival-partner.festival-partner"
     }
   }
 }

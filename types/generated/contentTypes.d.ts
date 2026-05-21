@@ -1448,6 +1448,11 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    partners: Attribute.Relation<
+      'api::festival.festival',
+      'manyToMany',
+      'api::festival-partner.festival-partner'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1469,6 +1474,53 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
       'api::festival.festival'
     >;
     locale: Attribute.String;
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ApiFestivalPartnerFestivalPartner
+  extends Schema.CollectionType {
+  collectionName: 'festival_partners';
+  info: {
+    singularName: 'festival-partner';
+    pluralName: 'festival-partners';
+    displayName: 'Partne\u0159i (katalog)';
+    description: 'Katalog partner\u016F \u2014 sd\u00EDlen\u00FD pro CZ i PL, pou\u017E\u00EDv\u00E1 se p\u0159es vazby ve festivalu a na str\u00E1nce Partne\u0159i.';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    logo: Attribute.Media<'images'> & Attribute.Required;
+    link: Attribute.String;
+    festivals: Attribute.Relation<
+      'api::festival-partner.festival-partner',
+      'manyToMany',
+      'api::festival.festival'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::festival-partner.festival-partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::festival-partner.festival-partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
     sitemap_exclude: Attribute.Boolean &
       Attribute.Private &
       Attribute.DefaultTo<false>;
@@ -1653,6 +1705,11 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
+    partnersFooter: Attribute.Relation<
+      'api::global.global',
+      'manyToMany',
+      'api::festival-partner.festival-partner'
+    >;
     phone: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2393,36 +2450,32 @@ export interface ApiPartnerPartner extends Schema.SingleType {
           localized: true;
         };
       }>;
-    topPartners: Attribute.Component<'content.partner', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    partners: Attribute.Component<'content.partner', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    supported: Attribute.Component<'content.partner', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    topPartners: Attribute.Relation<
+      'api::partner.partner',
+      'manyToMany',
+      'api::festival-partner.festival-partner'
+    >;
+    partners: Attribute.Relation<
+      'api::partner.partner',
+      'manyToMany',
+      'api::festival-partner.festival-partner'
+    >;
+    supported: Attribute.Relation<
+      'api::partner.partner',
+      'manyToMany',
+      'api::festival-partner.festival-partner'
+    >;
     headPartner2: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    partners2: Attribute.Component<'content.partner', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    partners2: Attribute.Relation<
+      'api::partner.partner',
+      'manyToMany',
+      'api::festival-partner.festival-partner'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2770,6 +2823,7 @@ declare module '@strapi/types' {
       'api::code.code': ApiCodeCode;
       'api::contact.contact': ApiContactContact;
       'api::festival.festival': ApiFestivalFestival;
+      'api::festival-partner.festival-partner': ApiFestivalPartnerFestivalPartner;
       'api::festivals-page.festivals-page': ApiFestivalsPageFestivalsPage;
       'api::form.form': ApiFormForm;
       'api::global.global': ApiGlobalGlobal;

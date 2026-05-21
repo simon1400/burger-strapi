@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "festival_partners",
+  "info": {
+    "singularName": "festival-partner",
+    "pluralName": "festival-partners",
+    "displayName": "Partneři (katalog)",
+    "description": "Katalog partnerů — sdílený pro CZ i PL, používá se přes vazby ve festivalu a na stránce Partneři."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link": {
+      "type": "string",
+      "required": false
+    },
+    "festivals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::festival.festival",
+      "mappedBy": "partners"
+    }
+  }
+}

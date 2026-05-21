@@ -40,7 +40,7 @@ module.exports = createCoreController('api::festival.festival', ({ strapi }) => 
     const results = await strapi.entityService.findMany('api::festival.festival', {
       filters: { slug },
       locale,
-      fields: ['title', 'slug', 'place', 'from', 'to', 'content'],
+      fields: ['title', 'slug', 'place', 'from', 'to', 'content', 'googleMapsUrl'],
     });
 
     const festival = Array.isArray(results) ? results[0] : results;
@@ -52,6 +52,10 @@ module.exports = createCoreController('api::festival.festival', ({ strapi }) => 
     const end = toIcsDateArray(festival.to, FESTIVAL_END_HOUR);
     const siteUrl = SITE_URL_BY_LOCALE[locale] || SITE_URL_BY_LOCALE.en;
     const url = `${siteUrl}/${festival.slug}`;
+    const locationParts = [festival.place, festival.title].filter(Boolean);
+    if (festival.googleMapsUrl) {
+      locationParts.push(festival.googleMapsUrl);
+    }
 
     const { error, value } = ics.createEvent({
       uid: `${festival.slug}-${locale}@burgerstreetfestival.cz`,
@@ -64,7 +68,7 @@ module.exports = createCoreController('api::festival.festival', ({ strapi }) => 
       endOutputType: 'local',
       title: `Burger Street Festival — ${festival.title}`,
       description: stripHtml(festival.content),
-      location: [festival.place, festival.title].filter(Boolean).join(', '),
+      location: locationParts.join(', '),
       url,
       status: 'CONFIRMED',
       busyStatus: 'BUSY',

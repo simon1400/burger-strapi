@@ -1388,6 +1388,12 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    googleMapsUrl: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     social: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {

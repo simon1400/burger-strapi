@@ -121,6 +121,14 @@
         }
       }
     },
+    "googleMapsUrl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "social": {
       "type": "string",
       "pluginOptions": {

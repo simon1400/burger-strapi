@@ -189,6 +189,38 @@
         }
       }
     },
+    "burgerZone": {
+      "type": "boolean",
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "burgerZoneColor": {
+      "type": "string",
+      "default": "#f0bd13",
+      "regex": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "burgerZoneTextColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white"
+      ],
+      "default": "black",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "votesIntroContent": {
       "type": "customField",
       "customField": "plugin::ckeditor5.CKEditor",

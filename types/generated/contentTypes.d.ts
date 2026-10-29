@@ -1436,6 +1436,27 @@ export interface ApiFestivalFestival extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<false>;
+    burgerZone: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
+    burgerZoneColor: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'#f0bd13'>;
+    burgerZoneTextColor: Attribute.Enumeration<['black', 'white']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'black'>;
     votesIntroContent: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
